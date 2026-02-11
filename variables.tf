@@ -22,11 +22,11 @@ EOT
     cdn_managed_https = optional(object({
       certificate_type = string
       protocol_type    = string
-      tls_version      = optional(string, "TLS12")
+      tls_version      = optional(string) # Default: "TLS12"
     }))
     user_managed_https = optional(object({
       key_vault_secret_id = string
-      tls_version         = optional(string, "TLS12")
+      tls_version         = optional(string) # Default: "TLS12"
     }))
   }))
 }
