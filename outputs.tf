@@ -1,3 +1,7 @@
+output "cdn_endpoint_custom_domains_id" {
+  description = "Map of id values across all cdn_endpoint_custom_domains, keyed the same as var.cdn_endpoint_custom_domains"
+  value       = { for k, v in azurerm_cdn_endpoint_custom_domain.cdn_endpoint_custom_domains : k => v.id }
+}
 output "cdn_endpoint_custom_domains_cdn_endpoint_id" {
   description = "Map of cdn_endpoint_id values across all cdn_endpoint_custom_domains, keyed the same as var.cdn_endpoint_custom_domains"
   value       = { for k, v in azurerm_cdn_endpoint_custom_domain.cdn_endpoint_custom_domains : k => v.cdn_endpoint_id }
